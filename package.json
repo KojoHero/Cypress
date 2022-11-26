@@ -1,0 +1,24 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KojoHero/Cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KojoHero/Cypress/issues"
+  },
+  "homepage": "https://github.com/KojoHero/Cypress#readme",
+  "devDependencies": {
+    "@testing-library/cypress": "^8.0.7",
+    "cypress": "^11.2.0"
+  }
+}
