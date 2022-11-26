@@ -5,7 +5,6 @@ describe('Tests filling radio button',()=>{
     })
     it('should check all radio buttons', ()=>{
         cy.get('#yesRadio').click({force: true})
-        cy.get('.text-success').should('contain', 'Yes')
-        
+        cy.get('.text-success').should('contain', 'Yes')   
     })
     })

@@ -18,6 +18,5 @@ describe('Tests filling web tables',()=>{
         cy.findByPlaceholderText('Department').type(text.generateWord(12))
         cy.findByText('Submit').click()
         cy.get('.rt-tbody').children().eq(3).should('contain', firstName)
-        
     })
     })
