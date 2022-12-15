@@ -10,6 +10,7 @@
 //
 //
 import '@testing-library/cypress/add-commands'
+import 'cypress-file-upload';
 // -- This is a parent command --
 // Cypress.Commands.add('login', (email, password) => { ... })
 //

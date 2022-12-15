@@ -19,6 +19,7 @@
   "homepage": "https://github.com/KojoHero/Cypress#readme",
   "devDependencies": {
     "@testing-library/cypress": "^8.0.7",
-    "cypress": "^11.2.0"
+    "cypress": "^11.2.0",
+    "cypress-file-upload": "^5.0.8"
   }
 }
