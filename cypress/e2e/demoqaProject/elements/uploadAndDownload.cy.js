@@ -10,6 +10,6 @@ describe('Tests uploads and downloads',()=>{
 
     it('should upload a file', ()=>{
         cy.get('#uploadFile').attachFile('uploadFile.jpeg');
-        cy.get('#uploadedFilePath').contains('C:/fakepath/uploadFile.jpeg');
+        cy.get('#uploadedFilePath').should('contain','C:\\fakepath\\uploadFile.jpeg');
     })
     }) 
