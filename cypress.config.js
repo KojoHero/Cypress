@@ -7,6 +7,7 @@ module.exports = defineConfig({
     },
     baseUrl: 'https://demoqa.com/',
     downloadsFolder: 'cypress/downloads',
-    trashAssetsBeforeRuns: true
+    trashAssetsBeforeRuns: true,
+    videoUploadOnPasses: false
   },
 });
