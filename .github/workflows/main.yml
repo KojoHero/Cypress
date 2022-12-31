@@ -1,5 +1,7 @@
 name: Hero Cypress Test
 on: [push]
+schedule: 
+  - cron: '0 16 * * 5'
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
