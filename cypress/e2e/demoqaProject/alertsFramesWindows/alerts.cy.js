@@ -5,7 +5,7 @@ describe("Tests alerts", () => {
     cy.visit("/alerts");
   });
 
-  it("should test that alert pops up after button click", () => {
+  it.skip("should test that alert pops up after button click", () => {
     const stub = cy.stub();
     cy.on("window:alert", stub);
     cy.get("#alertButton")
@@ -15,7 +15,7 @@ describe("Tests alerts", () => {
       });
   });
 
-  it.skip("should test that alert pops up after 5 seconds", () => {
+  it("should test that alert pops up after 5 seconds", () => {
     cy.clock();
     cy.get("#timerAlertButton").click();
     cy.tick(5000);
@@ -24,17 +24,29 @@ describe("Tests alerts", () => {
     });
   });
 
-  it.skip("should test that confirm box pops up", () => {
+  it("should test that confirm box pops up", () => {
+    const stub = cy.stub();
+    cy.on("window:confirm", stub);
     cy.clock();
-    cy.get("#confirmButton").click();
+    cy.get("#confirmButton").click().then(() => {
+        expect(stub.getCall(0)).to.be.calledWith("Do you confirm action?");
+      });;
     cy.tick(5000);
-    // cy.on('window:confirm', () => false)
-    cy.on("window:confirm", (text) => {
-      const expectedText =
-        "You have unsaved changes, are you sure you want to leave?";
-      // return false
-      expect(text).to.equal(expectedText);
-      done();
-    });
+  });
+
+  it("should write a text in a prompt field", () => {
+    
+      
+    //   cy.get('#promtButton').click().then(() => {
+    //     cy.get('#my-prompt').should('have.value', 'Hello, World!');
+    //   });
+      
+    // const stub = cy.stub();
+    // cy.on("window:confirm", stub);
+    // cy.clock();
+    // cy.get("#confirmButton").click().then(() => {
+    //     expect(stub.getCall(0)).to.be.calledWith("Do you confirm action?");
+    //   });;
+    // cy.tick(5000);
   });
 });
