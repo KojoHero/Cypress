@@ -14,9 +14,3 @@ jobs:
         with:
           browser: chrome
           headless: true
-- name: Notify Slack
-  env:
-    SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-  run: |
-    curl -X POST -H 'Content-type: application/json' --data '{"text":"Tests have finished running"}' $SLACK_WEBHOOK_URL
-
