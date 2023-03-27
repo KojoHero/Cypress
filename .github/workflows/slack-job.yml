@@ -14,6 +14,7 @@ jobs:
         with:
           status: ${{ job.status }}
           text: 'Workflow "${{ github.workflow }}" has completed.'
+          fields: repo,message,commit,author,action,eventName,ref
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
 
@@ -22,12 +23,3 @@ jobs:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
         run: |
           curl -X POST -H 'Content-type: application/json' --data '{"text":"Tests have finished running"}' $SLACK_WEBHOOK_URL
-
-      - name: Send Slack Notifications
-        if: always()
-        uses: rtCamp/action-slack-notify@v2.1.0
-        with:
-          status: ${{ job.status }}
-          fields: repo,message,commit,author,action,eventName,ref
-          slack_webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
-          channel: cypress
