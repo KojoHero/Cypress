@@ -9,6 +9,7 @@ module.exports = defineConfig({
     downloadsFolder: 'cypress/downloads',
     trashAssetsBeforeRuns: true,
     videoUploadOnPasses: false,
-    retries: 2
+    retries: 2,
   },
 });
+
