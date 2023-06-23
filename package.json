@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "open": "cypress open"
+    "open": "cypress open",
+    "json-report": "npx mochawesome-merge cypress/reports/.jsons/*.json > cypress/reports/mochawesome.json",
+    "html-report": "npx marge cypress/reports/mochawesome.json -f report -o cypress/reports/html",
+    "report": "rm -rf cypress/reports && npx cypress run && npx mochawesome-merge cypress/reports/.jsons/*.json > cypress/reports/mochawesome.json && npx marge cypress/reports/mochawesome.json -f report -o cypress/reports/html"
   },
   "repository": {
     "type": "git",
@@ -20,6 +23,9 @@
   "devDependencies": {
     "@testing-library/cypress": "^8.0.7",
     "cypress": "^11.2.0",
-    "cypress-file-upload": "^5.0.8"
+    "cypress-file-upload": "^5.0.8",
+    "cypress-mochawesome-reporter": "^3.5.1",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^4.3.0"
   }
 }

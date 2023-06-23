@@ -11,5 +11,16 @@ module.exports = defineConfig({
     videoUploadOnPasses: false,
     retries: 2,
   },
+  reporter: "cypress-mochawesome-reporter",
+  reporterOptions: {
+    reportDir: "cypress/reports",
+    overwrite: true,
+    html: false,
+    json: true,
+    charts: true,
+    inlineAssets: true,
+    reportPageTitle: "My Test Suite"
+  },
+  video: false
 });
 
